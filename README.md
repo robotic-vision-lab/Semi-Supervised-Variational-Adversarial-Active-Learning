@@ -55,7 +55,7 @@ we introduce novel techniques that significantly improve the use of abundant
 unlabeled data during training and take into account the task information.
 
 <p align="center">
-<img src="./misc/overview.png">
+<img src="./misc/architecture.jpg">
 </p>
 
 This repository provides source code for our 2024 ICPR paper titled "[Semi-Supervised
@@ -106,54 +106,26 @@ Run the following command to install required packages.
 
 ### Usage
 
-[//]: # (It's easy to run our code after you successfully install MMDetection. In order)
+We use the SoDeep software to provide a ranking algorithm as the sorter in our
+method. This sorter is trained separately from the rest of the model. To train
+the sorter, you can go to the [SoDeep repository](https://github.com/technicolor-research/sodeep)
+and follow the instructions there. In this work, we use the LSTM sorter with a
+length of 128. After training is completed, the sorter is applied to the loss
+prediction module to convert the predicted and target losses into ranking losses
+for the active learning process.
 
-[//]: # (to make it more efficient, we separate the process of producing bounding boxes)
+You can run the following script to train the active learning model.
 
-[//]: # (&#40;and their corresponding labels&#41; and performing inference. To produce boxes and)
+```shell
 
-[//]: # (labels, just set ``reuseFiles = False`` and ``saveFiles = True``. Then, run the)
+  python main_sodeep_semi.py --dataset cifar10 --data_path path/to/yourdata --batch_size 128 --no_of_epochs 150 --trials 1 --cycles 10 --weight_path ./weights/best_model.pth.tar
 
-[//]: # (following script)
+```
 
-[//]: # ()
-[//]: # (```shell)
 
-[//]: # (  python tools/testPOD.py )
-
-[//]: # (```)
-
-[//]: # ()
-[//]: # (The boxes and labels file will be saved as a pickle file in the ``savedOutputs``)
-
-[//]: # (folder. To do inference with an existing boxes and labels file, simply set)
-
-[//]: # (``reuseFiles = True`` and ``saveFiles = False``. There are four primary)
-
-[//]: # (hyperparameters we tuned in our work.)
-
-[//]: # ()
-[//]: # (- thresholds: Threshold for detection score)
-
-[//]: # (- covPercents: Percent in which the covariance is scaled)
-
-[//]: # (- boxratios: Ratio by which the bounding box is reduced)
-
-[//]: # (- iouthresholds: IoU threshold)
-
-[//]: # ()
-[//]: # (Given each pair of produced boxes and labels, you can run inference using a)
-
-[//]: # (combination of different values of hyperparameters. After you set the values of)
-
-[//]: # (these parameters to the ones you want to test, just run the above script again.)
-
-[//]: # (The computed PDQ score will be displayed in the terminal after inference)
-
-[//]: # (finishes.)
 
 ### License 
 
-[//]: # ([![license]&#40;https://img.shields.io/badge/license-Apache%202-blue&#41;]&#40;https://github.com/robotic-vision-lab/Deep-Ensembles-For-Probabilistic-Object-Detection/blob/main/LICENSE&#41;)
+[![license](https://img.shields.io/badge/license-Apache%202-blue)](https://github.com/robotic-vision-lab/Deep-Ensembles-For-Probabilistic-Object-Detection/blob/main/LICENSE)
 
 
