@@ -12,18 +12,18 @@ for sample selection rather than model training. To address these limitations,
 we introduce novel techniques that significantly improve the use of abundant
 unlabeled data during training and take into account the task information.
 
-This repository provides source code for our 2024 ICPR paper titled "[Semi-Supervised
-Variational Adversarial Active Learning via Learning to Rank and Agreement-Based
-Pseudo Labeling]." 
-Concretely, we propose an improved pseudo-labeling algorithm that leverages
-information from all unlabeled data in a semi-supervised manner, thus allowing a
-model to explore a richer data space. In addition, our method includes a
-ranking-based loss prediction module that converts predicted relative ranking
-information into a differentiable ranking loss. This loss can be embedded as a
-rank variable into the latent space of a variational autoencoder and then
-trained with a discriminator in an adversarial fashion for sample selection. We
-demonstrate the superior performance of our approach over the state of the art
-on various image classification and segmentation benchmark datasets.
+This repository provides source code for our 2024 ICPR paper titled
+"[Semi-Supervised Variational Adversarial Active Learning via Learning to Rank
+and Agreement-Based Pseudo Labeling]." Concretely, we propose an improved
+pseudo-labeling algorithm that leverages information from all unlabeled data in
+a semi-supervised manner, thus allowing a model to explore a richer data space.
+In addition, we develop a ranking-based loss prediction module that converts
+predicted relative ranking information into a differentiable ranking loss. This
+loss can be embedded as a rank variable into the latent space of a variational
+autoencoder and then trained with a discriminator in an adversarial fashion for
+sample selection. We demonstrate the superior performance of our approach over
+the state of the art on various image classification and segmentation benchmark
+datasets.
 
 ### Citation
 
