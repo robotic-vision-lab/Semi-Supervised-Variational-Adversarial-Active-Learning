@@ -38,7 +38,7 @@ If you find this project useful, then please consider citing our work.
 }
 ```
 
-### Model Architecture
+### Architecture
 
 <p align="center">
 <img src="./misc/architecture.jpg" alt="architecture" width="600"/>
