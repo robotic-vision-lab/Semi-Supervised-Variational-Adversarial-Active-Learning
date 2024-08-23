@@ -38,7 +38,7 @@ If you find this project useful, then please consider citing our work.
 }
 ```
 
-### Architecture
+### Architecture Outline 
 
 <p align="center">
 <img src="./misc/architecture.jpg" alt="architecture" width="600"/>
@@ -68,7 +68,7 @@ learning process.
 Run the following script to train the active learning model.
 
 ```shell
-  python main_sodeep_semi.py --dataset cifar10 --data_path path/to/yourdata --batch_size 128 --no_of_epochs 150 --trials 1 --cycles 10 --weight_path ./weights/best_model.pth.tar
+  python main_sodeep_semi.py --dataset cifar10 --data_path path/to/your/data --batch_size 128 --no_of_epochs 150 --trials 1 --cycles 10 --weight_path ./weights/best_model.pth.tar
 
 ```
 
