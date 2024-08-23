@@ -60,9 +60,9 @@ We utilize the SoDeep software to provide a ranking algorithm as the sorter in
 our framework. This sorter is trained separately from the rest of the model. To
 train the sorter, you can go to the [SoDeep
 repository](https://github.com/technicolor-research/sodeep) and follow the
-instructions there. In this work, we use the LSTM sorter with a length of 128.
-After training is complete, the sorter is applied to the loss prediction module
-to convert the predicted and target losses into ranking losses for the active
+instructions. In this work, we use the LSTM sorter with a length of 128.  After
+training is complete, the sorter is applied to the loss prediction module to
+convert the predicted and target losses into ranking losses for the active
 learning process.
 
 Run the following script to train the active learning model.
