@@ -60,15 +60,16 @@ We utilize the SoDeep software to provide a ranking algorithm as the sorter in
 our framework. This sorter is trained separately from the rest of the model. To
 train the sorter, you can go to the [SoDeep
 repository](https://github.com/technicolor-research/sodeep) and follow the
-instructions. In this work, we use the LSTM sorter with a length of 128.  After
+instructions. In this work, we use the LSTM sorter with a length of 128. After
 training is complete, the sorter is applied to the loss prediction module to
 convert the predicted and target losses into ranking losses for the active
-learning process.
+learning process. (Note: You can train a sorter with any length, but the length
+of the sorter must be consistent with the batch size.)
 
 Run the following script to train the active learning model.
 
 ```shell
-  python main_sodeep_semi.py --dataset cifar10 --data_path path/to/your/data --batch_size 128 --no_of_epochs 150 --trials 1 --cycles 10 --weight_path ./weights/best_model.pth.tar
+  python main_sodeep_semi.py --dataset cifar10 --data_path path/to/your/data --batch_size 128 --no_of_epochs 150 --trials 1 --cycles 10 --weight_path path/to/your/sorter
 
 ```
 
