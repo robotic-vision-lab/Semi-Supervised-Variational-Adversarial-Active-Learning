@@ -34,6 +34,7 @@ If you find this project useful, then please consider citing our work.
   title={Semi-Supervised Variational Adversarial Active Learning via Learning to Rank and Agreement-Based Pseudo Labeling},
   author={Lyu, Zongyao and Beksi, William J},
   booktitle={Proceedings of the International Conference on Pattern Recognition (ICPR)},
+  pages={},
   year={2024}
 }
 ```
