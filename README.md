@@ -42,7 +42,7 @@ If you find this project useful, then please consider citing our work.
 ### Architecture Outline 
 
 <p align="center">
-<img src="./misc/architecture.jpg" alt="architecture" width="600"/>
+  <img src="./misc/architecture.jpg" alt="architecture outline" width="600"/>
 </p>
 
 ### Installation
